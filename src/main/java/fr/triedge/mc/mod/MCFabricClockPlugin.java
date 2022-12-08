@@ -12,6 +12,7 @@ public class MCFabricClockPlugin implements ModInitializer{
 	public static final String MODID = "fabricclock19";
 	
 	private Clock clock;
+	private Deep deep;
 	
 	@Override
 	public void onInitialize() {
@@ -45,9 +46,11 @@ public class MCFabricClockPlugin implements ModInitializer{
 
 	private void registerEvents() {
 		clock = new Clock();
+		deep = new Deep();
 		
 		HudRenderCallback.EVENT.register((matrices,delta)->{
 			clock.render(matrices);
+			deep.render(matrices);
 		});
 	}
 
