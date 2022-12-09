@@ -35,7 +35,7 @@ public class Deep {
 		int xLocation = w - 55;
 		int yLocation = h - 25;
 		int y = (int) MinecraftClient.getInstance().player.getPos().getY();
-		DrawableHelper.drawStringWithShadow(matrices, MinecraftClient.getInstance().textRenderer, y+"", xLocation+10, yLocation, color);
+		DrawableHelper.drawStringWithShadow(matrices, MinecraftClient.getInstance().textRenderer, y+"", xLocation+12, yLocation, color);
 		
 		int hi = getBar(y, ORE.IRON);
 		RenderSystem.setShaderTexture(0, texIron);
