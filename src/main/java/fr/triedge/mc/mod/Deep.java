@@ -35,27 +35,27 @@ public class Deep {
 		int xLocation = w - 55;
 		int yLocation = h - 25;
 		int y = (int) MinecraftClient.getInstance().player.getPos().getY();
-		DrawableHelper.drawStringWithShadow(matrices, MinecraftClient.getInstance().textRenderer, y+"", xLocation, yLocation, color);
+		DrawableHelper.drawStringWithShadow(matrices, MinecraftClient.getInstance().textRenderer, y+"", xLocation+10, yLocation, color);
 		
 		int hi = getBar(y, ORE.IRON);
 		RenderSystem.setShaderTexture(0, texIron);
-		DrawableHelper.drawTexture(matrices, xLocation, yLocation-hi-1, 0, 0, 0, 2, hi, 1, 1);
+		DrawableHelper.drawTexture(matrices, xLocation, yLocation-hi+8, 0, 0, 0, 2, hi, 1, 1);
 		
 		hi = getBar(y, ORE.DIAM);
 		RenderSystem.setShaderTexture(0, texDiam);
-		DrawableHelper.drawTexture(matrices, xLocation+2, yLocation-hi-1, 0, 0, 0, 2, hi, 1, 1);
+		DrawableHelper.drawTexture(matrices, xLocation+2, yLocation-hi+8, 0, 0, 0, 2, hi, 1, 1);
 		
 		hi = getBar(y, ORE.COPPER);
 		RenderSystem.setShaderTexture(0, texCopper);
-		DrawableHelper.drawTexture(matrices, xLocation+4, yLocation-hi-1, 0, 0, 0, 2, hi, 1, 1);
+		DrawableHelper.drawTexture(matrices, xLocation+4, yLocation-hi+8, 0, 0, 0, 2, hi, 1, 1);
 		
 		hi = getBar(y, ORE.EMERALD);
 		RenderSystem.setShaderTexture(0, texEmerald);
-		DrawableHelper.drawTexture(matrices, xLocation+6, yLocation-hi-1, 0, 0, 0, 2, hi, 1, 1);
+		DrawableHelper.drawTexture(matrices, xLocation+6, yLocation-hi+8, 0, 0, 0, 2, hi, 1, 1);
 		
 		hi = getBar(y, ORE.GOLD);
 		RenderSystem.setShaderTexture(0, texGold);
-		DrawableHelper.drawTexture(matrices, xLocation+8, yLocation-hi-1, 0, 0, 0, 2, hi, 1, 1);
+		DrawableHelper.drawTexture(matrices, xLocation+8, yLocation-hi+8, 0, 0, 0, 2, hi, 1, 1);
 	}
 	
 	/**
@@ -71,11 +71,5 @@ public class Deep {
 			return 1;
 		
 		return height;
-	}
-	
-	private boolean checkLevel(int center, int current) {
-		if (current < center +5 && current > center -5)
-			return true;
-		return false;
 	}
 }
